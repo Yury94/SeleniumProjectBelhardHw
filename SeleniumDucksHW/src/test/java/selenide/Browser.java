@@ -5,5 +5,4 @@ public enum Browser {
     edge,
     safari,
     firefox
-
 }
