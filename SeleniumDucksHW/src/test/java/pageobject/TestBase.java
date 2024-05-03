@@ -4,12 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
 import java.time.Duration;
+
+import static selenide.Browser.opera;
 
 public class TestBase {
     public static final String LIGHT_PINK = "rgba(255, 204, 204, 1)";
@@ -19,11 +22,12 @@ public class TestBase {
 
     @BeforeMethod
     protected void setup() {
-        Browser browser = Browser.valueOf(System.getProperty("browser", "edge"));
+        Browser browser = Browser.valueOf(System.getProperty("browser", "chrome"));
 
         driver = switch (browser) {
             case edge -> new EdgeDriver();
             case chrome -> new ChromeDriver();
+            case opera -> new OperaDriver();
 //            case safari -> new SafariDriver();
 //            case firefox -> new FirefoxDriver();
         };
