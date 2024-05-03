@@ -75,7 +75,7 @@ public class SelenideRubberDucksHW15Test extends TestBase {
         HomePage.chooseProductFromCatalogAfterSuccessLogin();//выбираем нужный нам продукт
         ProductPage.selectButton("Small");//выбираем нужный нам селект
         ProductPage.clickAddToCardButton();//нажимаем на кнопку 'Add To Cart'
-        $("span.quantity").shouldHave(text("1"));//задаем Явное ожидание
+        $("span.quantity").shouldHave(text("2"));//задаем Явное ожидание
 
         ProductPage.clickBasketButton();//нажимаем на корзину
         BasketPage.clickRemoveButton();//нажимаем на кнопку Remove

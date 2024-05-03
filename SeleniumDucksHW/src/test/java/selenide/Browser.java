@@ -4,5 +4,6 @@ public enum Browser {
     chrome,
     edge,
     safari,
-    firefox
+    firefox,
+    opera
 }
